@@ -37,12 +37,6 @@
 
 }
 
-
-
-
-
-
-
 section, footer {
 	background: #fffcfc;
 }
@@ -62,15 +56,6 @@ a:focus{
 .container{
 	max-width: 1130px;
 }
-
-
-
-
-
-
-
-
-
 
 /*		Header 		*/
 
@@ -184,15 +169,6 @@ header .social li{
 header .social li:first-child{
 	margin: 0;
 }
-
-
-
-
-
-
-
-
-
 
 /*		Hero section 		*/
 
@@ -355,15 +331,6 @@ a.app_link{
   font-weight: bolder;
 }
 
-
-
-
-
-
-
-
-
-
 /*		Featured on section 		*/
 
 .featured_on{
@@ -384,15 +351,6 @@ a.app_link{
 .featured_on li:first-child{
 	margin-left: 0;
 }
-
-
-
-
-
-
-
-
-
 
 /*		About section 		*/
 
@@ -481,15 +439,6 @@ a.app_link{
 .about .features_list ul li span{
 	display: inline-block;
 }
-
-
-
-
-
-
-
-
-
 
 /*		App features 		*/
 
