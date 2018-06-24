@@ -249,10 +249,37 @@
 		</footer>
 		<!--  End Footer Section  -->
 		<script>
+			if (window.addEventListener) {
+			    addEventListener('DOMContentLoaded', init, false); 
+			    addEventListener('load', init, false); 
+			    addEventListener('scroll', init, false); 
+			    addEventListener('resize', init, false); 
+			} else if (window.attachEvent)  {
+			    attachEvent('onDOMContentLoaded', init); // IE9+ :(
+			    attachEvent('onload', init);
+			    attachEvent('onscroll', init);
+			    attachEvent('onresize', init);
+			}
+			function isElementInViewport (el) {
+
+			    //special bonus for those using jQuery
+			    if (typeof jQuery === "function" && el instanceof jQuery) {
+			        el = el[0];
+			    }
+
+			    var rect = el.getBoundingClientRect();
+
+			    return (
+			        rect.top >= 0 &&
+			        rect.left >= 0 &&
+			        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+			        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+			    );
+			}
 			function init() {
 			  var imgDefer = document.getElementsByTagName('img');
 			  for (var i=0; i<imgDefer.length; i++) {
-			  if(imgDefer[i].getAttribute('data-src')) {
+			  if(imgDefer[i].getAttribute('data-src') && isElementInViewport(imgDefer[i])) {
 			    imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
 			} } }
 			window.onload = init;
